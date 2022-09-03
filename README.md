@@ -14,7 +14,7 @@ I WANT a tutorial explaining a specific regex
 SO THAT I can understand the search pattern the regex defines
 ```
 
-## Acceptance Criteria
+## Acceptance Criteria 
 
 ```md
 GIVEN a regex tutorial

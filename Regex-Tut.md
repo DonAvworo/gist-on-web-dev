@@ -23,17 +23,100 @@ The components of a regex are as follows:
 
 - Anchors - Anchors are used to match a position within the string. There are two types of anchors: the caret `^` and the dollar sign `$`. The caret matches the beginning of the string, while the dollar sign matches the end of the string.
 
+anchor example code snippet:
+js code snippet
+```js
+const regex = /^Hello/;     // matches the beginning of the string
+const str = 'Hello World'; // string to be matched
+const result = regex.test(str); // returns true
+console.log(result); // true    
+```
+
+
 - Quantifiers - are used to match the number of characters within the string. There are five types of quantifiers: the asterisk `*`, the plus sign `+`, the question mark `?`, the curly braces `{}`, and the pipe `|`. The asterisk matches zero or more characters, the plus sign matches one or more characters, the question mark matches zero or one character, the curly braces match a specific number of characters, and the pipe matches one of several characters.
+example snippet of quantifiers code:
+
+```js
+let str = "The quick brown fox jumps over the lazy dog."; // string to be searched
+let regex = /fox*/g; // matches the fox and all the characters after it where g is the global flag
+let result = str.match(regex);
+console.log(result);
+
+// Output: ["fox", "fox"] 
+```
 
 - Character classes - are used to match a single character within the string. There are three types of character classes: the period `.`, the square brackets `[]`, and the backslash `\`. The period matches any character, the square brackets match a specific character, and the backslash matches a special character.
 
-- Groups - are used to match a sequence of characters within the string. There are two types of groups: the parentheses `()`, and the pipe `|`. The parentheses match a sequence of characters, and the pipe matches one of several characters.
+Character classes example in code:
+    
+```js
+let str = "The quick brown fox jumps over the lazy dog."; // string to be searched
+let regex = /[a-z]/g; // matches all the characters in the string   
+let result = str.match(regex);
+console.log(result);
+// Output: will be an array of all the characters in the string
+```
+
+- Grouping construct - are used to match a sequence of characters within the string. There are two types of groups: the parentheses `()`, and the pipe `|`. The parentheses match a sequence of characters, and the pipe matches one of several characters.
+
+Grouping construct example in code:
+
+```js
+let str = "The quick brown fox jumps over the lazy dog."; // string to be searched
+let regex = /(fox)/g; // matches the word fox
+let result = str.match(regex);
+console.log(result);
+// Output: ["fox"]
+```
+
+- Bracket expressions - are used to match a single character within the string. There are two types of bracket expressions: the square brackets `[]`, and the caret `^`. The square brackets match a specific character, and the caret matches any character except the characters in the brackets.
+
+Bracket expressions example in code:
+
+```js
+let str = "The quick brown fox jumps over the lazy dog."; // string to be searched
+let regex = /[^a-z]/g; // matches all the characters that are not in the string
+let result = str.match(regex);
+console.log(result);
+// output will be an array of all the characters that are not in the string
+```
 
 - Flags - are used to modify the search behavior. There are three types of flags: the global `g`, the case insensitive `i`, and the multiline `m`. The global flag matches all occurrences of the pattern, the case insensitive flag matches both uppercase and lowercase characters, and the multiline flag matches all occurrences of the pattern in multiple lines.
 
+Flags example in code:
+
+```js
+let str = "The quick brown fox jumps over the lazy dog."; // string to be searched
+let regex = /fox/g; // matches all the occurrences of the word fox
+let result = str.match(regex);
+console.log(result);
+// Output: ["fox", "fox"]
+```
+
 - Character escapes - are used to match a single character within the string. There are two types of character escapes: the backslash `\`, and the caret `^`. The backslash matches a special character, and the caret matches the beginning of the string.
 
+Character escapes example in code:
+
+```js
+let str = "The quick brown fox jumps over the lazy dog."; // string to be searched
+let regex = /\./g; // matches the period
+let result = str.match(regex);
+console.log(result);
+// Output: ["."]
+```
+
 - The OR operator - The OR operator is used to match one of several characters within the string. There are two types of the OR operator: the pipe `|`, and the square brackets `[]`. The pipe matches one of several characters, and the square brackets match a specific character.
+
+The OR operator example in code:
+
+```js
+let str = "The quick brown fox jumps over the lazy dog."; // string to be searched
+let regex = /fox|dog/g; // matches the word fox or dog
+let result = str.match(regex);
+console.log(result);
+// Output: ["fox", "dog"]
+```
+
 
 
 The list below summarises the functions of characters in the regex components:
@@ -116,3 +199,5 @@ Thank you for reading. I hope you found this tutorial helpful. If you have any q
  * https://regex101.com/
 
  * https://www.computerhope.com/jargon/r/regex.htm
+
+ * https://www.w3schools.com/python/python_regex.asp
